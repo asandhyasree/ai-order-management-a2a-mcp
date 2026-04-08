@@ -1,0 +1,35 @@
+{
+  "categories": [
+    {
+      "name": "Veg Pizzas",
+      "items": [
+        {"id": "v1", "name": "Margherita", "description": "Classic Mozzarella Cheese", "prices": {"Regular": 109, "Medium": 239, "Large": 449}},
+        {"id": "v2", "name": "Farmhouse", "description": "Mushroom, Corn, Onion, Capsicum", "prices": {"Regular": 259, "Medium": 459, "Large": 689}},
+        {"id": "v3", "name": "Peppy Paneer", "description": "Paneer, Capsicum, Red Paprika", "prices": {"Regular": 259, "Medium": 459, "Large": 689}},
+        {"id": "v4", "name": "Veggie Paradise", "description": "Gold Corn, Black Olives, Capsicum, Red Paprika", "prices": {"Regular": 259, "Medium": 459, "Large": 689}}
+      ]
+    },
+    {
+      "name": "Non-Veg Pizzas",
+      "items": [
+        {"id": "nv1", "name": "Chicken Golden Delight", "description": "BBQ Chicken, Corn, Extra Cheese", "prices": {"Regular": 299, "Medium": 559, "Large": 829}},
+        {"id": "nv2", "name": "Chicken Dominator", "description": "Double Pepper BBQ Chicken, Peri-Peri Chicken, Chicken Sausage", "prices": {"Regular": 359, "Medium": 599, "Large": 919}}
+      ]
+    },
+    {
+      "name": "Pizza Mania",
+      "items": [
+        {"id": "m1", "name": "Onion Pizza", "price": 59},
+        {"id": "m2", "name": "Golden Corn Pizza", "price": 79}
+      ]
+    },
+    {
+      "name": "Sides & Desserts",
+      "items": [
+        {"id": "s1", "name": "Garlic Breadsticks", "price": 109},
+        {"id": "s2", "name": "Stuffed Garlic Bread", "price": 159},
+        {"id": "s3", "name": "Choco Lava Cake", "price": 109}
+      ]
+    }
+  ]
+}

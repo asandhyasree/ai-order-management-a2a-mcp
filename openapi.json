@@ -1,0 +1,138 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Legendary Margherita API",
+        "version": "1.0.0",
+        "description": "API for ordering and tracking pizzas from Legendary Margherita."
+    },
+    "servers": [
+        {
+            "url": "http://localhost:9000",
+            "description": "Pizza Shop Backend"
+        }
+    ],
+    "paths": {
+        "/menu": {
+            "get": {
+                "summary": "Get menu",
+                "description": "Returns all available pizzas and sides.",
+                "operationId": "get_menu",
+                "responses": {
+                    "200": {
+                        "description": "Successful menu retrieval"
+                    }
+                }
+            }
+        },
+        "/order": {
+            "post": {
+                "summary": "Place order",
+                "description": "Submits a new pizza order.",
+                "operationId": "place_order",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/OrderRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Order created"
+                    }
+                }
+            }
+        },
+        "/order/{order_id}": {
+            "get": {
+                "summary": "Track order",
+                "description": "Returns the current status and estimated time for an order.",
+                "operationId": "track_order",
+                "parameters": [
+                    {
+                        "name": "order_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful order tracking",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TrackingStatus"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "OrderRequest": {
+                "type": "object",
+                "required": [
+                    "customer_name",
+                    "items"
+                ],
+                "properties": {
+                    "customer_name": {
+                        "type": "string"
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "quantity": {
+                                    "type": "integer"
+                                },
+                                "size": {
+                                    "type": "string",
+                                    "enum": [
+                                        "Regular",
+                                        "Medium",
+                                        "Large"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "TrackingStatus": {
+                "type": "object",
+                "properties": {
+                    "order_id": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "Received",
+                            "Preparing",
+                            "Baking",
+                            "Out for Delivery",
+                            "Delivered"
+                        ]
+                    },
+                    "estimated_minutes": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    }
+}

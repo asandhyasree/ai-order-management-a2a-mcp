@@ -1,0 +1,33 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environment variables (contains API keys)
+.env
+
+# Google OAuth credentials (sensitive)
+credentials.json
+token.json
+
+# Runtime data
+orders.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Main orchestrator
+main.py
