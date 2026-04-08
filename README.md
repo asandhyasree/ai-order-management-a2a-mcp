@@ -257,6 +257,4 @@ streamlit
 5. **Session Management**: Persisting state across interactions
 6. **OAuth Integration**: Google Calendar authentication
 
-## License
 
-MIT License
